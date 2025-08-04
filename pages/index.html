@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <title>Mind-Food</title>
+
+    <!-- Conexion Con BootsTrap -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,44 +15,89 @@
       crossorigin="anonymous"
     />
 
+    <!-- Biblioteca de Iconos de BootsTrap -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos del archivo -->
+
     <link rel="stylesheet" href="/assets/css/index_styles.css" />
+
+    <!-- Animacion AOS -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
+    <!-- HEADER -->
+
     <header class="container-fluid navbar-custom">
-      <nav class="navbar navbar-expand-lg navbar-custom">
+      <!-- NAV -->
+      <nav class="navbar navbar-custom">
         <div class="container-fluid">
-          <img
-            src="/assets/img/logo.png"
-            alt=""
-            style="width: 2.5rem; height: 2.5rem"
-            class="me-1"
-          />
+          <img src="/assets/img/logo.png" alt="" class="me-1 logo" />
+
+          <!-- Titulo Pagina -->
+
           <a href="#" class="me-5 nombre-pagina"><strong>Mind-Food</strong></a>
+
+          <!-- boton menu Hamburguesa offcanva (sidebar) -->
+
           <button
-            class="navbar-toggler"
+            class="btn btn-outline-light d-lg-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
           >
-            <span class="navbar-toggler-icon"></span>
+            <i class="bi bi-list"></i>
+            <!-- icono de bootstrap -->
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </div>
+
+          <!--Navegacion sin Offcanvas-->
+
+          <div class="d-none d-lg-flex mx-auto gap-5">
+            <a href="#" class="nav-link text-white">Inicio</a>
+            <a href="#" class="nav-link text-white">Recetas</a>
+            <a href="#" class="nav-link text-white">Planes</a>
+            <a href="#" class="nav-link text-white">Contacto</a>
           </div>
         </div>
       </nav>
+
+      <!--offcanvas para sidebarEnd (lado derecho)-->
+      <div
+        class="offcanvas d-lg-none offcanvas-end text-bg-dark sidebar"
+        tabindex="-1"
+        id="sidebarMenu"
+        aria-labelledby="sidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarLabel">Mind-Food</h5>
+
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li><a href="#" class="nav-link text-white">Inicio</a></li>
+            <li><a href="#" class="nav-link text-white">Recetas</a></li>
+            <li><a href="#" class="nav-link text-white">Planes</a></li>
+            <li><a href="#" class="nav-link text-white">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
-    <section class="carrusel">
+    <section class="carrusel" data-aos="fade-right" data-aos-duration="3000">
       <div
         id="carouselExampleCaptions"
         class="carousel slide"
@@ -83,7 +132,7 @@
               class="d-block w-100 slideImg"
               alt="..."
             />
-            <div class="carousel-caption d-none d-md-block slide_Text">
+            <div class="carousel-caption d-md-block slide_Text">
               <h5>Come sano, vive mejor</h5>
               <p>
                 Encuentra recetas deliciosas adaptadas a tus necesidades, Cuida
@@ -97,7 +146,7 @@
               class="d-block w-100 slideImg"
               alt="..."
             />
-            <div class="carousel-caption d-none d-md-block slide_Text">
+            <div class="carousel-caption d-md-block slide_Text">
               <h5>¿Bajar de peso o ganar musculo?</h5>
               <p>
                 Tenemos recetas diseñadas para ayudarte a alcanzar tu meta sin
@@ -111,7 +160,7 @@
               class="d-block w-100 slideImg"
               alt="..."
             />
-            <div class="carousel-caption d-none d-md-block slide_Text">
+            <div class="carousel-caption d-md-block slide_Text">
               <h5>Sin azúcar, sin grasa, sin límites</h5>
               <p>
                 Disfruta de platos pensados para ti, incluso si tienes
@@ -142,78 +191,109 @@
     </section>
 
     <section class="intro_section">
-      <div class="row"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Columna de texto -->
+          <div
+            class="col-md-6 mb-4 mb-md-0"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
+            <h2 class="fw-bold">Bienvenido a Mind-Food</h2>
+            <p class="lead">
+              Nuestra misión es ayudarte a mejorar tu alimentación con recetas
+              personalizadas para tus objetivos: bajar de peso, ganar masa
+              muscular o seguir dietas específicas.
+            </p>
+            <p>
+              Ya no tenés que preocuparte por qué cocinar. Nosotros te damos
+              ideas sanas, rápidas y sabrosas, adaptadas a tus necesidades.
+              ¡Empezá hoy a cambiar tu estilo de vida!
+            </p>
+            <a href="#recetas" class="btn btn-success">Explorar Recetas</a>
+          </div>
+
+          <!-- Columna con imagen -->
+          <div
+            class="col-md-6"
+            data-aos="fade-up-left"
+            data-aos-duration="5000"
+          >
+            <img
+              src="/assets/img/intro.jpg"
+              alt="Salud y comida"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="container-fluid">
-      <section class="cards container tarjetas-container">
-        <div class="row g-3 gx-4">
-          <div class="col-md-4 d-flex">
-            <div class="card flex-fill tarjeta">
-              <h5 class="card-title">Caninos</h5>
-              <img
-                src="https://cdn.pixabay.com/photo/2022/08/26/18/58/dogs-7413124_1280.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <p class="card-text">
-                  Los caninos, como perros y lobos, son animales muy
-                  inteligentes y leales. Son excelentes compañeros y tienen un
-                  gran sentido del olfato. Además, juegan un rol importante en
-                  muchos ecosistemas.
-                </p>
-              </div>
+    <div class="container-fluid tarjetas-container">
+      <section class="container text-center" data-aos="fade-right">
+        <h2 class="mb-4 fw-bold">¿Por qué elegir Mind-Food?</h2>
+        <p class="mb-5 lead">
+          Mejorá tu alimentación sin complicarte. Estas son solo algunas de las
+          razones para unirte:
+        </p>
+
+        <div class="row g-4 gx-5">
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="card h-100 shadow text-center p-4"
+              data-aos="flip-up"
+              data-aos-delay="0"
+            >
+              <i class="bi bi-heart-pulse fs-1 text-success mb-3"></i>
+              <h5 class="card-title">Salud personalizada</h5>
+              <p class="card-text">
+                Recetas adaptadas a tus objetivos: bajar de peso, ganar masa
+                muscular o controlar tus niveles de grasa y azúcar.
+              </p>
             </div>
           </div>
 
-          <div class="col-md-4 d-flex">
-            <div class="card flex-fill tarjeta">
-              <h5 class="card-title">Caballos</h5>
-
-              <img
-                src="https://cdn.pixabay.com/photo/2023/06/22/03/58/animals-8080446_640.jpg"
-                alt="..."
-              />
-              <div class="card-body">
-                <p class="card-text">
-                  Los caballos han sido aliados del ser humano durante siglos,
-                  usados para transporte y trabajo. Son fuertes, rápidos y
-                  elegantes, además de muy sensibles a su entorno. Su vínculo
-                  con las personas es muy especial.
-                </p>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div
+              class="card h-100 shadow text-center p-4"
+              data-aos="flip-up"
+              data-aos-delay="800"
+            >
+              <i class="bi bi-emoji-smile fs-1 text-warning mb-3"></i>
+              <h5 class="card-title">Comé rico sin culpa</h5>
+              <p class="card-text">
+                Disfrutá de comidas sabrosas sin dejar de lado tu bienestar.
+                Ideal para personas con restricciones o preferencias
+                alimentarias.
+              </p>
             </div>
           </div>
 
-          <div class="col-md-4 d-flex">
-            <div class="card flex-fill tarjeta">
-              <h5 class="card-title">Vacas</h5>
-              <img
-                src="https://cdn.pixabay.com/photo/2013/10/31/13/42/cows-203460_1280.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <p class="card-text">
-                  Las vacas son animales de gran importancia agrícola,
-                  principalmente por la leche y carne que producen. Son
-                  tranquilas y se adaptan bien a diferentes climas.
-                </p>
-              </div>
+          <div class="col-md-0 col-lg-4">
+            <div
+              class="card h-100 shadow text-center p-4"
+              data-aos="flip-up"
+              data-aos-duration="10000"
+              0
+              data-aos-delay="1600"
+            >
+              <i class="bi bi-lightning-charge fs-1 text-danger mb-3"></i>
+              <h5 class="card-title">Rápido y fácil</h5>
+              <p class="card-text">
+                Recetas simples, con ingredientes accesibles, listas para
+                ayudarte a llevar una vida saludable sin perder tiempo.
+              </p>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-
-    <footer class="bg-dark text-light pt-5 pb-3">
+    <footer
+      class="bg-dark text-light pt-5 pb-3"
+      data-aos="fade-right"
+      data-aos-duration="500"
+    >
       <div class="container">
         <div class="row">
           <!-- Logo y derechos -->
@@ -262,5 +342,15 @@
         </div>
       </div>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
